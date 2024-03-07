@@ -1,0 +1,34 @@
+package analisis;   
+
+//importaciones
+import java_cup.runtime.Symbol;
+
+//Codigo de la clase parser
+parser code
+{:
+    public void syntaxis_error(Symbol s){
+        System.out.println("Error sintactico Recuperable");
+    }
+
+    public void unrecovered_syntaxis_error(Symbol s){
+        System.out.println("Error Sintactico no recuperable");
+    }
+:}
+
+action code
+{:
+    String codiuser = "";
+    
+:}
+
+terminal EXCLAMACION, DOSPUNTOS, FLECHAI, PTYCOMA, COMA, IGUAL, MENORQ, MAYORQ, BLANCOS, ENTEROS;
+terminal TK_PROGRAM, TK_END, TK_ENDPROGRAM;
+
+nonterminal INICIO, INSTRUCCION;
+nonterminal EXPRESION;
+
+start with INICIO;
+
+INICIO ::= TK_PROGRAM INSTRUCCION TK_ENDPROGRAM
+;
+

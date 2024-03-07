@@ -3,8 +3,8 @@ package analisis;
 import java_cup.runtime.Symbol;
 
 %%
-scanner es= new scanner(texto);
-s.cadena;
+//scanner es= new scanner(texto);
+//s.cadena;
 
 %{
     String cadena = "";
@@ -32,13 +32,47 @@ DOSPUNTOS = ":"
 FLECHAI = "<-"
 PTYCOMA = ";"
 COMA = ","
-BLANCOS=[\ \r\t\f\n]+
-ENTEROS = [0-9]+
+IGUAL = "="
+MENORQ = "<"
+MAYORQ = ">"
+CORCHETE1 = "["
+CORCHETE2 = "]"
+BLANCOS =[\ \r\t\f\n]+
+DOUBLE = [0-9]+.[0-9]+
 
 //Palabras reservadas
 TK_PROGRAM = "program"
 TK_END = "end"
 TK_ENDPROGRAM = "end program"
+TK_VAR = "var"
+TK_SUM = "sum2
+TK_RES = "res"
+TK_MUL = "mul"
+TK_DIV = "div"
+TK_MOD = "mod"
+TK_MEDIA = "media"
+TK_MEDIANA = "mediana"
+TK_MODA = "moda"
+TK_VARIANZA = "varianza"
+TK_MAX = "max"
+TK_MIN = "min"
+TK_CONSOLE = "console"
+TK_PRINT = "print"
+TK_PIE = "graphpie"
+Tk_TITULO = "titulo"
+TK_LABEL = "label"
+TK_VALUE = "values"
+TK_CHAR = "char"
+TK_EXEC = "exec"
+TK_EJEX = "ejex"
+TK_EJEY = "ejey"
+TK_TITULOX = "titulox"
+TK_TIUTLOY = "tituloy"
+TK_GRAPHBAR = "graphbar"
+TK_HISTOGRAM = "histogram"
+
+
+
 
 
 %%
