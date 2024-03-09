@@ -15,6 +15,7 @@ public class OLC1_Proyecto1_201404253 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        new pantallaInicio().setVisible(true);
     }
     
 }
