@@ -2,6 +2,8 @@ package analisis;
 
 //importaciones
 import java_cup.runtime.Symbol;
+import java.lang.Math;
+import java.util.LinkedList;
 
 //Codigo de la clase parser
 parser code
@@ -25,14 +27,66 @@ action code
     
 :}
 
-terminal EXCLAMACION, DOSPUNTOS, FLECHAI, PTYCOMA, COMA, IGUAL, MENORQ, MAYORQ, BLANCOS, ENTEROS;
-terminal TK_PROGRAM, TK_END, TK_ENDPROGRAM;
+/*
 
-nonterminal INICIO, INSTRUCCION;
-nonterminal EXPRESION;
+*/
+
+terminal EXCLAMACION, DOSPUNTOS, FLECHAI, PTYCOMA, COMA, IGUAL, MENORQ, MAYORQ;
+terminal CORCHETE1, CORCHETE2, BLANCOS, ARROBA, TK_COLUMNA;
+terminal TK_PROGRAM, TK_END, TK_VAR, TK_DOUBLE, TK_SUM, TK_RES, TK_MUL, TK_DIV;
+terminal TK_MOD, TK_MEDIA, TK_MEDIANA, TK_MODA, TK_VARIANZA, TK_MAX, TK_MIN;
+terminal TK_CONSOLE, TK_PRINT, TK_PIE, TK_TITULO, TK_LABEL, TK_VALUE, TK_CHAR;
+terminal TK_EXEC, TK_EJEX, TK_EJEY, TK_TITULOX, TK_TIUTLOY, TK_GRAPHBAR;
+terminal TK_HISTOGRAM, TK_GRAPHPIE, TK_GRAPHLINE, PAR1, PAR2, TK_ARR;
+terminal String CADENA, DECIMAL, CADENA1, CADENA2;
+
+nonterminal INSTRUCCION, COMSIMPLE, COMMULTI, VARIABLE, CONSOLA, TIPO;
+nonterminal EXPRESION, ARREGLO, GRAFICA, INSTRUCCIONES, PROGRAMA, VALOR;
+nonterminal OPERACION, SUM, RES, MUL, DIV, MOD;
+nonterminal String INICIO;
 
 start with INICIO;
 
-INICIO ::= TK_PROGRAM INSTRUCCION TK_ENDPROGRAM
+INICIO ::= PROGRAMA {:  RESULT=codiUser;   :}
 ;
 
+PROGRAMA ::= TK_PROGRAM INSTRUCCION TK_END TK_PROGRAM
+;
+
+INSTRUCCION ::= INSTRUCCIONES INSTRUCCION
+              | INSTRUCCIONES
+;
+
+INSTRUCCIONES ::= COMSIMPLE
+                | COMMULTI
+                | VARIABLE
+                | CONSOLA
+                | EXPRESION
+                | ARREGLO
+                | GRAFICA
+;
+
+VARIABLE ::= TK_VAR DOSPUNTOS TIPO DOSPUNTOS DOSPUNTOS CADENA FLECHAI VALOR TK_END PTYCOMA 
+;
+
+TIPO ::= TK_DOUBLE
+       | TK_CHAR CORCHETE1 CORCHETE2
+;
+
+VALOR ::= CADENA
+        | DECIMAL
+        | OPERACION
+;
+
+OPERACION ::= SUM:s {:  codiUser+=s+"\n";   :}
+            | RES
+            | MUL
+            | DIV
+            | MOD
+;
+
+SUM ::= TK_SUM PAR1 DECIMAL:a COMA DECIMAL:b PAR2 TK_END PTYCOMA {:    RESULT=a+b;     :}
+;
+
+CONSOLA ::= TK_CONSOLE DOSPUNTOS DOSPUNTOS TK_PRINT IGUAL VARIABLE:v TK_END PTYCOMA {:  codiUser+=v+"\n";   :}
+;

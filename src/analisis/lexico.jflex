@@ -22,7 +22,8 @@ import java_cup.runtime.Symbol;
 %char
 %column
 %full
-%ignorecase
+%debug
+%ignorecase 
 
 %state CADENA
 
@@ -37,6 +38,9 @@ MENORQ = "<"
 MAYORQ = ">"
 CORCHETE1 = "["
 CORCHETE2 = "]"
+PAR1 = "("
+PAR2 = ")"
+ARROBA = "@"
 BLANCOS =[\ \r\t\f\n]+
 DECIMAL = [0-9]+("."[0-9]+)?
 
@@ -72,7 +76,8 @@ TK_GRAPHBAR = "graphbar"
 TK_HISTOGRAM = "histogram"
 TK_GRAPHPIE = "graphpie"
 TK_GRAPHLINE = "graphline"
-
+TK_ARR = "arr"
+TK_COLUMNA = "column"
 
 %%
 <YYINITIAL> {TK_PROGRAM}    {return new Symbol(sym.TK_PROGRAM, yyline, yycolumn, yytext());}
@@ -93,7 +98,7 @@ TK_GRAPHLINE = "graphline"
 <YYINITIAL> {TK_CONSOLE}    {return new Symbol(sym.TK_CONSOLE, yyline, yycolumn, yytext());}
 <YYINITIAL> {TK_PRINT}      {return new Symbol(sym.TK_PRINT, yyline, yycolumn, yytext());}
 <YYINITIAL> {TK_PIE}        {return new Symbol(sym.TK_PIE, yyline, yycolumn, yytext());}
-<YYINITIAL> {TK_TITULO}     {return new Symbol(sym.TTK_TITULO, yyline, yycolumn, yytext());}
+<YYINITIAL> {TK_TITULO}     {return new Symbol(sym.TK_TITULO, yyline, yycolumn, yytext());}
 <YYINITIAL> {TK_LABEL}      {return new Symbol(sym.TK_LABEL, yyline, yycolumn, yytext());}
 <YYINITIAL> {TK_VALUE}      {return new Symbol(sym.TK_VALUE, yyline, yycolumn, yytext());}
 <YYINITIAL> {TK_CHAR}       {return new Symbol(sym.TK_CHAR, yyline, yycolumn, yytext());}
@@ -106,6 +111,8 @@ TK_GRAPHLINE = "graphline"
 <YYINITIAL> {TK_HISTOGRAM}  {return new Symbol(sym.TK_HISTOGRAM, yyline, yycolumn, yytext());}
 <YYINITIAL> {TK_GRAPHPIE}   {return new Symbol(sym.TK_GRAPHPIE, yyline, yycolumn, yytext());}
 <YYINITIAL> {TK_GRAPHLINE}  {return new Symbol(sym.TK_GRAPHLINE, yyline, yycolumn, yytext());}
+<YYINITIAL> {TK_ARR}        {return new Symbol(sym.TK_ARR, yyline, yycolumn, yytext());}
+<YYINITIAL> {TK_COLUMNA}    {return new Symbol(sym.TK_COLUMNA, yyline, yycolumn, yytext());}
 
 <YYINITIAL> {EXCLAMACION}   {return new Symbol(sym.EXCLAMACION,yyline,yycolumn,yytext());}
 <YYINITIAL> {DOSPUNTOS}     {return new Symbol(sym.DOSPUNTOS,yyline,yycolumn,yytext());}
@@ -118,6 +125,7 @@ TK_GRAPHLINE = "graphline"
 <YYINITIAL> {CORCHETE1}     {return new Symbol(sym.CORCHETE1,yyline,yycolumn,yytext());}
 <YYINITIAL> {CORCHETE2}     {return new Symbol(sym.CORCHETE2,yyline,yycolumn,yytext());}
 <YYINITIAL> {DECIMAL}       {return new Symbol(sym.DECIMAL,yyline,yycolumn,yytext());}
+<YYINITIAL> {ARROBA}        {return new Symbol(sym.ARROBA,yyline,yycolumn,yytext());}
 
 <YYINITIAL> {BLANCOS}    {}
 

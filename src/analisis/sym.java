@@ -8,21 +8,59 @@ package analisis;
 /** CUP generated class containing symbol constants. */
 public class sym {
   /* terminals */
-  public static final int COMA = 6;
-  public static final int EXCLAMACION = 2;
+  public static final int TK_PIE = 32;
+  public static final int PAR2 = 47;
   public static final int DOSPUNTOS = 3;
-  public static final int TK_END = 13;
-  public static final int TK_ENDPROGRAM = 14;
+  public static final int PAR1 = 46;
+  public static final int TK_DOUBLE = 18;
+  public static final int TK_TITULOX = 40;
   public static final int MENORQ = 8;
-  public static final int EOF = 0;
-  public static final int FLECHAI = 4;
-  public static final int PTYCOMA = 5;
-  public static final int BLANCOS = 10;
+  public static final int TK_EJEY = 39;
+  public static final int BLANCOS = 12;
+  public static final int TK_EJEX = 38;
+  public static final int TK_DIV = 22;
+  public static final int TK_TITULO = 33;
+  public static final int TK_MIN = 29;
   public static final int IGUAL = 7;
+  public static final int TK_MEDIANA = 25;
+  public static final int CORCHETE2 = 11;
+  public static final int TK_PROGRAM = 15;
+  public static final int CORCHETE1 = 10;
+  public static final int ARROBA = 13;
+  public static final int TK_MUL = 21;
+  public static final int TK_MOD = 23;
+  public static final int TK_TIUTLOY = 41;
+  public static final int EXCLAMACION = 2;
+  public static final int DECIMAL = 50;
+  public static final int EOF = 0;
+  public static final int TK_MODA = 26;
   public static final int error = 1;
-  public static final int ENTEROS = 11;
-  public static final int TK_PROGRAM = 12;
+  public static final int COMA = 6;
+  public static final int CADENA = 49;
+  public static final int TK_VARIANZA = 27;
+  public static final int CADENA2 = 52;
+  public static final int CADENA1 = 51;
+  public static final int TK_MEDIA = 24;
+  public static final int TK_VALUE = 35;
+  public static final int TK_END = 16;
+  public static final int TK_SUM = 19;
+  public static final int TK_ARR = 48;
+  public static final int TK_HISTOGRAM = 43;
+  public static final int FLECHAI = 4;
+  public static final int TK_GRAPHLINE = 45;
+  public static final int TK_LABEL = 34;
   public static final int MAYORQ = 9;
+  public static final int PTYCOMA = 5;
+  public static final int TK_PRINT = 31;
+  public static final int TK_MAX = 28;
+  public static final int TK_VAR = 17;
+  public static final int TK_EXEC = 37;
+  public static final int TK_COLUMNA = 14;
+  public static final int TK_CONSOLE = 30;
+  public static final int TK_GRAPHPIE = 44;
+  public static final int TK_RES = 20;
+  public static final int TK_GRAPHBAR = 42;
+  public static final int TK_CHAR = 36;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
@@ -34,11 +72,49 @@ public class sym {
   "IGUAL",
   "MENORQ",
   "MAYORQ",
+  "CORCHETE1",
+  "CORCHETE2",
   "BLANCOS",
-  "ENTEROS",
+  "ARROBA",
+  "TK_COLUMNA",
   "TK_PROGRAM",
   "TK_END",
-  "TK_ENDPROGRAM"
+  "TK_VAR",
+  "TK_DOUBLE",
+  "TK_SUM",
+  "TK_RES",
+  "TK_MUL",
+  "TK_DIV",
+  "TK_MOD",
+  "TK_MEDIA",
+  "TK_MEDIANA",
+  "TK_MODA",
+  "TK_VARIANZA",
+  "TK_MAX",
+  "TK_MIN",
+  "TK_CONSOLE",
+  "TK_PRINT",
+  "TK_PIE",
+  "TK_TITULO",
+  "TK_LABEL",
+  "TK_VALUE",
+  "TK_CHAR",
+  "TK_EXEC",
+  "TK_EJEX",
+  "TK_EJEY",
+  "TK_TITULOX",
+  "TK_TIUTLOY",
+  "TK_GRAPHBAR",
+  "TK_HISTOGRAM",
+  "TK_GRAPHPIE",
+  "TK_GRAPHLINE",
+  "PAR1",
+  "PAR2",
+  "TK_ARR",
+  "CADENA",
+  "DECIMAL",
+  "CADENA1",
+  "CADENA2"
   };
 }
 
