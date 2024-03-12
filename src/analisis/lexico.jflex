@@ -8,6 +8,9 @@ import java_cup.runtime.Symbol;
 
 %{
     String cadena = "";
+    String cadena1 = "";
+    String cadena2 = "";
+    String cadena3 = "";
 %}
 
 %init{
@@ -26,6 +29,9 @@ import java_cup.runtime.Symbol;
 %ignorecase 
 
 %state CADENA
+%state CADENA1
+%state CADENA2
+%state CADENA3
 
 //simbolos
 EXCLAMACION = "!"
@@ -134,4 +140,25 @@ TK_COLUMNA = "column"
 <CADENA>                    {
     [\"]    {String tmp=cadena; cadena=""; yybegin(YYINITIAL); return new Symbol(sym.CADENA, yycolumn,yyline,tmp);}
     [^\"]   {cadena+=yytext();}
+}
+
+<YYINITIAL> [\:]            {yybegin(CADENA1);cadena1="";}
+
+<CADENA1>                    {
+    [\:]    {String tmp=cadena1; cadena1=""; yybegin(YYINITIAL); return new Symbol(sym.CADENA1, yycolumn,yyline,tmp);}
+    [^\<-]   {cadena1+=yytext();}
+}
+
+<YYINITIAL> [\A-Z]            {yybegin(CADENA2);cadena2="";}
+
+<CADENA2>                    {
+    [\A-Z]    {String tmp=cadena2; cadena2=""; yybegin(YYINITIAL); return new Symbol(sym.CADENA2, yycolumn,yyline,tmp);}
+    [^\n]   {cadena2+=yytext();}
+}
+
+<YYINITIAL> [\<]            {yybegin(CADENA3);cadena3="";}
+
+<CADENA3>                    {
+    [\<]    {String tmp=cadena3; cadena3=""; yybegin(YYINITIAL); return new Symbol(sym.CADENA3, yycolumn,yyline,tmp);}
+    [^\>]   {cadena3+=yytext();}
 }

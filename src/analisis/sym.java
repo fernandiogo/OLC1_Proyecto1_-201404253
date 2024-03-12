@@ -28,18 +28,20 @@ public class sym {
   public static final int CORCHETE1 = 10;
   public static final int ARROBA = 13;
   public static final int TK_MUL = 21;
+  public static final int SUMA = 49;
   public static final int TK_MOD = 23;
   public static final int TK_TIUTLOY = 41;
   public static final int EXCLAMACION = 2;
-  public static final int DECIMAL = 50;
+  public static final int DECIMAL = 51;
   public static final int EOF = 0;
   public static final int TK_MODA = 26;
   public static final int error = 1;
   public static final int COMA = 6;
-  public static final int CADENA = 49;
+  public static final int CADENA = 50;
   public static final int TK_VARIANZA = 27;
-  public static final int CADENA2 = 52;
-  public static final int CADENA1 = 51;
+  public static final int CADENA3 = 54;
+  public static final int CADENA2 = 53;
+  public static final int CADENA1 = 52;
   public static final int TK_MEDIA = 24;
   public static final int TK_VALUE = 35;
   public static final int TK_END = 16;
@@ -111,10 +113,12 @@ public class sym {
   "PAR1",
   "PAR2",
   "TK_ARR",
+  "SUMA",
   "CADENA",
   "DECIMAL",
   "CADENA1",
-  "CADENA2"
+  "CADENA2",
+  "CADENA3"
   };
 }
 

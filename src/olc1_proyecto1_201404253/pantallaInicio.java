@@ -220,7 +220,7 @@ public class pantallaInicio extends javax.swing.JFrame {
 
     private void jMenu3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MousePressed
         // TODO add your handling code here:
-         String texto = jTextArea1.getText();
+        String texto = jTextArea1.getText();
         try {
             scanner s = new scanner(new BufferedReader(new StringReader(texto)));
             parser p = new parser(s);
